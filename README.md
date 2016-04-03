@@ -43,7 +43,6 @@
 	- Project: collection of source code and resource files, and other additional information for the compiler to build the project
 	- Assembly: it's the project already compiled (.exe for process assembly or .dll for library assembly)
 		Solution: combine multiple projects together to accomplish a task or form a complete program. It has information on how the different projects should be connected to each other.
-
 - Explanation of the source code
 	- keyword using: to get libraries which are available to be used (details in #chapter26)
 	- {} to group code and its possible name with keywords namespace, class and method's signature
@@ -64,9 +63,8 @@
 * Type, name and value to be used and operated
 * Copying variables: it doesn't affect the original variable's value.
 * Referring a variable: it happens using arrays. Look at #chapter16
-* The "type system"
+* The «type system»
 	* a byte to get 256 different states of 0s and 1s or representation of numbers
-
 * The importance of good variable names. Follow the seven rules.
 
 **C06 - The C# Type System**
@@ -104,7 +102,6 @@
 * Division by zero
 	* Exception on using integral types
 	* Infinity on using floating point types
-
 * Other values: NaN for floating points, depending on the operation
 * Overflow and underflow after operations and using explicit casting with data loss
 
@@ -112,9 +109,11 @@
 
 * Interesting introduction to conditionals
 * Interesting learnable example, using always " because ' is only for characters: 
- ```csharp
+
+```csharp
 Console.WriteLine($"The result is {theResult:0.0000}, and the sign is {((theSign == 0) ? "positive" : "negative" )}." );
- ```
+```
+
 **C11 - Switch Statements**
 
 * No surprises: bool, string and integral types, with the exception on that break is strictly required, which is different from C++ and Java.
@@ -242,8 +241,8 @@ grid[4,3]: 12
 **C15 - Methods**
 
 * No surprises, but the mention of the ability to have up 65,500 parameters in a method.
-* The /// comments are immediately displayed by IntelliSense.
-* There it comes an explanation of recursion on pages 100-101 <3.
+* The `///` comments are immediately displayed by IntelliSense.
+* There it comes an explanation of recursion on pages 100-101 **<3**.
 
 **C16 - Value and Reference Types**
 
@@ -251,27 +250,20 @@ grid[4,3]: 12
 	* Stack
 		* Pointer to the current state of execution.
 		* For method's frames, containing local variables including parameters in a single method invocation's frame.
-
 	* Heap
 		* Dedicated to storing data.
-
-
 * In a multi-threaded application, each thread has its own stack but share the heap with the others (#chapter37).
 * Garbage collector
 	* In charge of managing the heap automatically
 		* This is an environment with managed heap. Managed by the CLR.
 		* This is the reason C# doesn't provide pointers but references. The references are included in the CLR's heap management.
-
-
 * Value Types and Reference Types
 	* The key difference between them: «when you have a variable that is a value type, the actual contents of that variable live where the variable lives. With a reference type, the contents of the variable live on the heap, and the variable itself contains only a reference to the actual content.»
 	* The reference type allow nulls.
-
 * The semantic of the type
 	* Value type semantic
 		* Data of the value inside of a variable
 		* On copy: the value (data) is copied
-
 	* Reference type semantic
 		* Reference to a location in the heap where the data are stored
 		* On copy: the reference is copied
@@ -297,7 +289,6 @@ static void SecondMethod( string arg) {
 * Terminology
 	* Classes. they all are reference types.
 	* Objects or instances of a class
-
 
 **C26 - Namespace and using directives: #chapter26**
 
