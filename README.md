@@ -240,7 +240,7 @@ grid[4,3]: 12
 ```
 **C15 - Methods**
 
-* No surprises, but the mention of the ability to have up 65,500 parameters in a method.
+* No surprises, but the mention of the ability to have up to 65,500 parameters in a method.
 * The `///` comments are immediately displayed by IntelliSense.
 * There it comes an explanation of recursion on pages 100-101 **<3**.
 
