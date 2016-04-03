@@ -1,1 +1,2 @@
-# The C Sharp Player's Guide - Second Edition
+# The C # Player's Guide - Second Edition
+
