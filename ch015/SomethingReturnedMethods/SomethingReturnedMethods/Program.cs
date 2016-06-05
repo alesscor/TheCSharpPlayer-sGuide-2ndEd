@@ -20,7 +20,10 @@ namespace SomethingReturnedMethods {
             // PrintArray(anArray);
             // Console.WriteLine($"{Factorial(5)}");
             // Console.WriteLine($"{Fibonacci(6)}");
-            TestFibonacci(11);
+            // TestFibonacci(25);
+            // Console.WriteLine($"CalculatePlayerScore(1,2,3,4):{CalculatePlayerScore(1,2,3,4)}");
+            int[] anArray = FibonacciArray(25);
+            PrintArray(anArray);
             Console.ReadKey();
         }
         static int GetRandomInteger() {
@@ -58,6 +61,31 @@ namespace SomethingReturnedMethods {
             return  underlingsDestroyed*10+
                     minionsDestroyed*100+
                     bossesDestroyed*1000;
+        }
+        /// <summary>
+        /// Returns the player score for the given parameteres.
+        /// </summary>
+        /// <param name="livesLeft"></param>
+        /// <param name="underlingsDestroyed"></param>
+        /// <param name="minionsDestroyed"></param>
+        /// <param name="bossesDestroyed"></param>
+        /// <returns></returns>
+        static int CalculatePlayerScore(
+                int livesLeft,
+                int underlingsDestroyed,
+                int minionsDestroyed,
+                int bossesDestroyed) {
+
+            // If the player is out of lives, they lose all of their points.
+            if (livesLeft == 0) {
+                return 0;
+            }
+
+            // Otherwise, the player gets 10 points for every underling destroyed, 100 points
+            // for every minion destroyed, and 1000 points for every boss destroyed.
+            return underlingsDestroyed * 10 +
+                    minionsDestroyed * 100 +
+                    bossesDestroyed * 1000;
         }
         static void Count(int numberToCountTo) {
             for (int current=1;current<=numberToCountTo;current++) {
@@ -121,9 +149,26 @@ namespace SomethingReturnedMethods {
             }
             return Fibonacci(nth-2)+ Fibonacci(nth - 1);
         }
+        /// <summary>
+        /// Obtains a Fibonacci array
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        static int[] FibonacciArray(int length) {
+            int[] resArray = new int[length];
+            for(int i=0; i<length; i++) {
+                // Console.WriteLine($"i:{i+1}");
+                resArray[i] = Fibonacci(i+1);
+            }
+            return resArray;
+        }
         static void TestFibonacci() {
             TestFibonacci(10);
         }
+        /// <summary>
+        /// Tests Fibonacci serie.
+        /// </summary>
+        /// <param name="last">Where the serie should stop</param>
         static void TestFibonacci(int last) {
             for(int i = 1; i <= last; i++) {
                 Console.WriteLine($"Fibonacci[{i}]: {Fibonacci(i)}");
